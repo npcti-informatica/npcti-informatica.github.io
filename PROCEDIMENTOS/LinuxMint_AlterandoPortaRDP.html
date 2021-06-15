@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv= "Content-type" content="text/html; charset="utf-8">
+	<title>NPCTI INFORMÁTICA</title>
+</head>
+<body>	
+	<center>
+		<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/Titulo_Procedimentos.png?raw=true">
+	</center>
+	<pre style="font-family:arial">
+						<h2><center>LINUX MINT – ALTERANDO O NUMERO DA PORTA RDP.</center></h2>
+
+								Fonte: <a href=https://www.blog.flaviodeoliveira.com.br/2014/08/instalando-o-rdp-remote-desktop.html target="_blank">https://www.blog.flaviodeoliveira.com.br/2014/08/instalando-o-rdp-remote-desktop.html</a>
+
+								<u>Procedimentos para alterar o número da porta RDP no Linux MINT que por padrão 3389.</u>	
+
+								1. Após realizar o LOGON no Linux MINT abra o console do terminal COMMAND PROMPT;
+
+								<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_PROCED/LINUX/MINT/AlterandoPorta.PNG/port01.png?raw=true">	
+
+								2. Caso não tenha instalado o pacote XRDP para realizar o acesso remoto , execute o comando sudo apt-get install xrdp;
+
+								3. Após o procedimento, execute o comando sudo nano /etc/xrdp/xrdp.ini para abrir o conteúdo do arquivo de configuração do XRDP;
+
+								<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_PROCED/LINUX/MINT/AlterandoPorta.PNG/port02.png?raw=true">
+
+								4. Por padrão a porta configurada é 3389 conforme o exemplo na imagem abaixo;
+
+								<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_PROCED/LINUX/MINT/AlterandoPorta.PNG/port03.png?raw=true">
+
+								5. Altere o número da porta. Para este laboratório a porta será alterada para 3004;
+
+								<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_PROCED/LINUX/MINT/AlterandoPorta.PNG/port04.png?raw=true">
+
+								6. Após a alteração pressione as teclas CTRL + X para sair, onde o sistema perguntara se deseja salvar as alterações;
+
+								<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_PROCED/LINUX/MINT/AlterandoPorta.PNG/port05.png?raw=true">
+
+								7. O sistema vai perguntar se deseja salvar as informações. Digite Y e aperte ENTER;
+
+								<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_PROCED/LINUX/MINT/AlterandoPorta.PNG/port06.png?raw=true">
+
+								8. Retornando para tela principal, execute o comando sudo service xrdp restart para reiniciar o serviço XRDP;
+
+								<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_PROCED/LINUX/MINT/AlterandoPorta.PNG/port07.png?raw=true">
+
+								9. Realize o LOGOFF no sistema;
+
+								<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_PROCED/LINUX/MINT/AlterandoPorta.PNG/port08.png?raw=true">
+
+								10. No Windows execute a ferramenta para acesso RDP;
+
+								<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_PROCED/LINUX/MINT/AlterandoPorta.PNG/port09.png?raw=true">
+
+								11. Em seguida, será exibida a tela de LOGIN da ferramenta XRDP do LINUX;
+
+								<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_PROCED/LINUX/MINT/AlterandoPorta.PNG/port010.png?raw=true">
+
+								12. Após autenticar, o desktop da conta do usuário será exibida com sucesso;
+
+								<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_PROCED/LINUX/MINT/AlterandoPorta.PNG/port011.png?raw=true">
+						
+	</pre>
+	<center>	
+		<h4>
+			<p>Equipe: <a href=mailto:suporte.npcti@outlook.com target="_blank"> suporte.npcti@outlook.com </a> </p>
+			
+			<a href="https://npcti-informatica.github.io/procedimentos.html">
+			<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/bt_voltar.png?raw=true">
+			</a>
+		</h4>
+	</center>
+</body>
+</html>
