@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv= "Content-type" content="text/html; charset="utf-8">
+	<title>NPCTI INFORMÁTICA</title>
+</head>
+<body>	
+	<center>
+		<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/Titulo_Cenarios.png?raw=true" width="100%">
+	</center>
+
+			<h1><center>GPO ALTERAR PAPEL DE PAREDE DA EQUIPE HELPDESK.</center></h1>
+
+		<pre style="font-family:arial">
+
+			<strong><u>CENÁRIO:</u>
+
+				A supervisão do SAC solicitou que fosse alterado o papel de parede exclusivamente para equipe do Helpdesk para diferenciar as equipes do SAC e do HD.
+
+				Atualmente o papel de parede da equipe do HD é igual ao papel de parede da equipe do SAC;
+
+					EQUIPE ATENDIMENTO SAC WALLPAPER
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_01.jpg?raw=true">
+
+					EQUIPE ATENDIMENTO HELPDESK WALLPAPER
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_02.jpg?raw=true?raw=true">
+			</strong>
+
+			<STRONG> PROCEDIMENTOS COMPARTILHAMENTO DA IMAGEM:</strong>
+				
+				1.	Foram escolhidas os papeis de parede para equipe do Helpdesk onde as imagens foram salvas no diretório de exemplo 
+				\\npcti-srvfs01\SUPORTE\PICTURE onde a pasta SUPORTE está configurada com as permissões:
+
+				
+					·	COMPARTILHAMENTO:
+
+						<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_03.jpg?raw=true?raw=true">
+
+					·	SEGURANÇA:
+
+						<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_04.jpg?raw=true?raw=true">
+
+					·	LOGO:
+
+						<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_05.jpg?raw=true?raw=true">
+
+					·	PAPEL DE PAREDE:
+
+						<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_06.jpg?raw=true?raw=true">
+
+				2.	Utilizando o programa BGINFO \\npcti-srvfs01\SUPORTE\BGINFO onde foi configurado um arquivo
+				para mostrar dados do computador e o papel de parede;
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_07.jpg?raw=true?raw=true">
+
+				3.	No mesmo diretório do BGINFO foi criado um script.BAT para ser executado pela GPO;
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_08.jpg?raw=true?raw=true">
+
+			<strong>PROCEDIMENTOS COMPARTILHAMENTO DA IMAGEM: </strong>				
+
+				4.	No Domain Controller, após executar o GERENCIAMENTO DE POLITICA DE GRUPO será criada
+				a política GPO_BGINFO_HD que será vinculada;
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_09.jpg?raw=true?raw=true">
+
+				5.	Após criar a política, “botão direito” > EDITAR para abrir o EDITOR DE GERENCIAMENTO DE POLITICA DE GRUPO;
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_10.jpg?raw=true?raw=true">
+
+				6.	Em seguida navegue até a opção CONFIGURAÇÃO DO USUÁRIO > POLITICAS > CONFIGURAÇÕES DO WINDOWS >
+				SCRIPT LOGON/LOGOFF > LOGON;
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_11.jpg?raw=true">
+
+				7.	Após abrir a política de LOGON na guia SCRIPTS clique em ADICIONAR;
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_12.jpg?raw=true">
+
+				8.	No campo NOME DO SCRIPT foi informado o caminho de rede onde está o arquivo .BAT 
+				que executa o script do BGINFO de configuração da imagem de fundo da equipe do helpdesk que 
+				neste laboratório \\npcti-srvfs01\SUPORTE\BGINFO\npcti_hd.bat; 
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_13.jpg?raw=true">
+
+				9.	Após adicionar a informação, clique em APLICAR e OK para salvar as alterações;
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_14.jpg?raw=true">
+
+				10.	Feche o EDITOR DE GERENCIAMENTO DE POLITICA DE GRUPO e verifique na política na guia OPÇÕES
+				se a regra foi configurada com sucesso; 
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_15.jpg?raw=true">
+
+			<strong>
+				
+				OBSERVAÇÃO: Como a política para inserir um papel de parede exclusivo para o HELPDESK 
+				não funcionou utilizando o recurso FILTRO DE SEGURANÇA da guia ESCOPO,
+				foi necessário criar uma OU HELPDESK para que a GPO_bginfo_HD pudesse ser associada;
+
+			</strong>
+
+				<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_16.jpg?raw=true">
+				
+				->> A GPO vinculada a OU do Helpdesk <<--
+
+				<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_17.jpg?raw=true">
+
+				11.	No Domain Controller após executar o Powershell como administrador,
+				foi executado o comando INVOKE-GPUPDATE para que a política de grupo seja aplicada imediatamente;
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_18.jpg?raw=true">
+
+			<strong>PROCEDIMENTOS NO COMPUTADOR CLIENTE</strong>
+
+				12. No computador cliente, foi executado o comando GPUPDATE /FORCE para atualizar a política de grupo que foi criada;
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_19.jpg?raw=true">
+
+				13.	Em seguida foi realizado o LOGOFF/LOGON no computador cliente;
+
+				14. Após o procedimento o papel de parede foi atualizado;
+
+					<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/IMG_CENARIOS/gpo_wallpaper_hd/img_20.jpg?raw=true">
+						
+	</pre>
+	<center>	
+		<h4>
+			<p>Equipe: <a href=mailto:suporte.npcti@outlook.com target="_blank"> suporte.npcti@outlook.com </a> </p>
+			<p>Autor: <a href=mailto:fsilva.npcti@outlook.com target="_blank">Fábio Nepomuceno da Silva</a> </p>
+			<a href="https://npcti-informatica.github.io/procedimentos.html">
+			<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/bt_voltar.png?raw=true" width="20%">
+			</a>
+		</h4>
+	</center>
+
+	<center>
+			
+		<img src="https://github.com/npcti-informatica/npcti-informatica.github.io/blob/master/curriculo/Img_rodape_exp_prof.png?raw=true" width="100%">
+			
+	</center>
+
+</body>
+</html>
