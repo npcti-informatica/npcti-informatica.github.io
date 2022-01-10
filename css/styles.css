@@ -445,7 +445,7 @@ footer .wrapper:after {
     .locality{
         display: none;
     }
-    .company-box .company-info h3, p {
+    .company-box .company-info h3, p{
         font-size: .8em;
     }
     .job-type {
